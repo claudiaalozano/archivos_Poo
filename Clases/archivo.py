@@ -1,4 +1,4 @@
-#función que reciba los datos del archivo calificaciones.txt y los almacene en una lista de diccionarios y retorne la lista de diccionarios 
+
 def leer_archivo(nombre_archivo):
     lista_diccionarios = []
     archivo = open(nombre_archivo, 'r')
@@ -12,7 +12,7 @@ def leer_archivo(nombre_archivo):
     archivo.close()
     return lista_diccionarios
 
-#función que reciba una lista de diccionarios como la que devuelve la función anterior y añada a cada diccionario un nuevo par con la nota final del curso. El peso de cada parcial de teoría en la nota final es de un 30% mientras que el peso del examen de prácticas es de un 40%.
+
 def calcular_nota_final(lista_diccionarios):
     for diccionario in lista_diccionarios:
         calificacion_parcial = int(diccionario['calificacion'])
@@ -21,3 +21,12 @@ def calcular_nota_final(lista_diccionarios):
     return lista_diccionarios
 
 
+def aprobados_y_suspensos(lista_diccionarios):
+    lista_aprobados = []
+    lista_suspensos = []
+    for diccionario in lista_diccionarios:
+        if diccionario['nota_final'] >= 5:
+            lista_aprobados.append(diccionario)
+        else:
+            lista_suspensos.append(diccionario)
+    return lista_aprobados, lista_suspensos
