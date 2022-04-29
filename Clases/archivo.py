@@ -1,5 +1,5 @@
 
-#Una función que reciba el fichero de calificaciones (1).txt y devuelva una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y la asistencia de un alumno. La lista tiene que estar ordenada por apellidos.
+
 import csv
 
 
