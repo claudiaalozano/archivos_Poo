@@ -18,21 +18,22 @@ else:
                 calificaciones[columnas[i]] = campos[i]
                 print(calificaciones)
 
+    
 
 def leer_fichero(nombre_fichero):
     calificaciones = {}
     nombre_fichero = 'calificaciones.csv'
     with open(nombre_fichero, 'r') as fichero:
         lector = csv.DictReader(fichero)
-        for fila in lector:
-            calificaciones.append(fila)
+        for linea in lector:
+            nombre_fichero.append(calificaciones)
     return calificaciones
     
 
 def calcular_nota_final(calificaciones):
         for diccionario in calificaciones:
             calificacion_parcial = int(diccionario['calificacion'])
-            calificacion_final = (calificacion_parcial * 0.3) + (calificacion_parcial * 0.4)
+            calificacion_final = ((("Parcial1" + "Parlial2")/2) * 0.3) + ("Ordinario1" * 0.4)
             diccionario['nota_final'] = calificacion_final
         return calificaciones
 
@@ -46,5 +47,4 @@ def aprobados_y_suspensos(calificaciones):
             else:
                 lista_suspensos.append(diccionario)
         return lista_aprobados, lista_suspensos
-
 
