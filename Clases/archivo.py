@@ -8,7 +8,15 @@ else:
     lineas = f.readlines()
     f.close()
     columnas = lineas[0].split("\t")
-    seleccion = [] 
+    seleccion = ["Apellidos" , "Nombre" , "Asistencia" , "Parcial1" , "Parcial2" , "Ordinario1" , "Ordinario2" , "Practicas" , "OrdinarioPracticas"] 
+    calificaciones = []
+    for linea in lineas[1:]:
+        calificaciones = {}
+        campos = linea.split("\t")
+        for i in range(len(columnas)):
+            if columnas[i] in seleccion:
+                calificaciones[columnas[i]] = campos[i]
+                print(calificaciones)
 
 
 def leer_fichero(nombre_fichero):
