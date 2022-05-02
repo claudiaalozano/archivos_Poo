@@ -19,14 +19,15 @@ else:
                 print(calificaciones)
 
 
+
 def leer_fichero(nombre_fichero):
-    lista_diccionarios = []
+    calificaciones = {}
     nombre_fichero = 'calificaciones.csv'
     with open(nombre_fichero, 'r') as fichero:
         lector = csv.DictReader(fichero)
         for fila in lector:
-            lista_diccionarios.append(fila)
-    return lista_diccionarios
+            calificaciones.append(fila)
+    return calificaciones
     
 
 def calcular_nota_final(lista_diccionarios):
