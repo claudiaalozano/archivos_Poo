@@ -19,7 +19,6 @@ else:
                 print(calificaciones)
 
 
-
 def leer_fichero(nombre_fichero):
     calificaciones = {}
     nombre_fichero = 'calificaciones.csv'
@@ -30,20 +29,22 @@ def leer_fichero(nombre_fichero):
     return calificaciones
     
 
-def calcular_nota_final(lista_diccionarios):
-        for diccionario in lista_diccionarios:
+def calcular_nota_final(calificaciones):
+        for diccionario in calificaciones:
             calificacion_parcial = int(diccionario['calificacion'])
             calificacion_final = (calificacion_parcial * 0.3) + (calificacion_parcial * 0.4)
             diccionario['nota_final'] = calificacion_final
-        return lista_diccionarios
+        return calificaciones
 
 
-def aprobados_y_suspensos(lista_diccionarios):
+def aprobados_y_suspensos(calificaciones):
         lista_aprobados = []
         lista_suspensos = []
-        for diccionario in lista_diccionarios:
+        for diccionario in calificaciones:
             if diccionario['nota_final'] >= 5:
                 lista_aprobados.append(diccionario)
             else:
                 lista_suspensos.append(diccionario)
         return lista_aprobados, lista_suspensos
+
+
