@@ -42,9 +42,10 @@ def aprobados_y_suspensos(calificaciones):
         lista_aprobados = []
         lista_suspensos = []
         for diccionario in calificaciones:
-            if diccionario['nota_final'] >= 5:
-                lista_aprobados.append(diccionario)
+            calificacion_final = ((("Parcial1" + "Parlial2")/2) * 0.3) + ("Ordinario1" * 0.4)
+            if calificacion_final >= 5:
+                lista_aprobados.append(calificaciones)
             else:
-                lista_suspensos.append(diccionario)
+                lista_suspensos.append(calificaciones)
         return lista_aprobados, lista_suspensos
 
