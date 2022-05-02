@@ -1,10 +1,19 @@
-
-
 import csv
+
+try:
+    f = open("calificaciones (1).csv", "r")
+except FileNotFoundError:
+    print("El archivo no existe")
+else:
+    lineas = f.readlines()
+    f.close()
+    columnas = lineas[0].split("\t")
+    seleccion = [] 
 
 
 def leer_fichero(nombre_fichero):
     lista_diccionarios = []
+    nombre_fichero = 'calificaciones.csv'
     with open(nombre_fichero, 'r') as fichero:
         lector = csv.DictReader(fichero)
         for fila in lector:
