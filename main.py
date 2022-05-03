@@ -6,7 +6,8 @@ if __name__ == '__main__':
 
     if notas == 1 :
         from Clases.archivo import leer_fichero
-        lista_diccionarios = leer_fichero('calificaciones.csv')
+        nombre_fichero = 'calificaciones.csv'
+        lista_diccionarios = leer_fichero()
         print(lista_diccionarios)
     elif notas == 2 :
         from Clases.archivo import calcular_nota_final
@@ -23,3 +24,4 @@ if __name__ == '__main__':
         lista_aprobados, lista_suspensos = aprobados_y_suspensos(lista_diccionarios)
         print(lista_aprobados)
         print(lista_suspensos)
+        aprobados_y_suspensos()

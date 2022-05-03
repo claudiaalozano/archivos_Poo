@@ -20,14 +20,22 @@ else:
 
     
 
-def leer_fichero(nombre_fichero):
-    calificaciones = {}
-    nombre_fichero = 'calificaciones.csv'
-    with open(nombre_fichero, 'r') as fichero:
-        lector = csv.DictReader(fichero)
-        for linea in lector:
-            nombre_fichero.append(calificaciones)
+def leer_fichero():
+    f = open('calificaciones.csv', 'r')
+    lineas = f.readlines()
+    f.close()
+    calificaciones = []
+    for linea in lineas[1:]:
+        calificaciones.append(linea.split('\t'))
     return calificaciones
+    
+    #calificaciones = {}
+    
+    #with open('calificaciones.csv', 'r') as fichero:
+     #   lector = csv.DictReader(fichero)
+      #  for linea in lector:
+     #       nombre_fichero.append(calificaciones)
+    #return calificaciones
     
 
 def calcular_nota_final(calificaciones):
