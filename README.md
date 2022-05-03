@@ -1,5 +1,5 @@
 # ARCHIVOS DE POO
-Mi dirección de Github es: 
+Mi dirección de Github es: https://github.com/claudiaalozano/archivos_Poo.git
 
 El código empleado es:
 
